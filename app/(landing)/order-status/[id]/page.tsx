@@ -4,7 +4,7 @@ import { getTransactionById } from "@/app/services/transaction.service";
 import { TPageProps } from "../../product/[id]/page";
 
 const OrderStatus = async ({params}: TPageProps) => {
-    const {id} = await params
+    const {id} = await params;
 
     const transaction = await getTransactionById(id);
     console.log("transaction", transaction);

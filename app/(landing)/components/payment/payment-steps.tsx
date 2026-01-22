@@ -51,7 +51,7 @@ const PaymentSteps = () => {
 
             alert("Transaction created successfully!");
             reset();
-            push('/order-status/${res._id}')
+            push(`/order-status/${res._id}`)
         } catch(error) {
             console.log(error);
         }
