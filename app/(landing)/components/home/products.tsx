@@ -20,8 +20,8 @@ const ProductsSection = ({products}: TProductsProps) => {
     const handleAddToCart = (e: React.MouseEvent, product: Product) => {
         e.preventDefault();
         e.stopPropagation();
-        addItem(product)
-    }
+        addItem(product);
+    };
 
     return ( 
     <section id="product-section" className="container mx-auto mb-52">
@@ -45,16 +45,16 @@ const ProductsSection = ({products}: TProductsProps) => {
                         <Button className="w-10 h-10 p-2! absolute right-3 top-3" 
                                 onClick={(e) => handleAddToCart(e, product)}
                         >
-                        <FiPlus size={24} />
+                        <FiPlus size={24}/>
                         </Button>
                     </div>
                     <h3 className="font-medium text-lg mb-1.5 mt-4">{product.name}</h3>
-            <div className="flex justify-between mb-8">
-              <div className="text-gray-500">{product.category.name }</div>
-              <div className="font-medium text-primary">
-                {priceFormatter(product.price)}
-              </div>
-            </div>
+                    <div className="flex justify-between mb-8">
+                        <div className="text-gray-500">{product.category.name }</div>
+                        <div className="font-medium text-primary">
+                        {priceFormatter(product.price)}
+                        </div>
+                    </div>
                 </Link>
             ))}
        </div>

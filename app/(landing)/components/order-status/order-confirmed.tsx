@@ -19,7 +19,7 @@ const OrderConfirmed = () => {
                 We will contact you in Whatsapp for further shipping updates.
             </p>
         </div>
-    )
-}
+    );
+};
 
 export default OrderConfirmed;

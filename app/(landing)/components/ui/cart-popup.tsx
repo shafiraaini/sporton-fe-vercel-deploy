@@ -8,21 +8,21 @@ import { getImageUrl } from "@/app/lib/api";
    
 const CartPopup = () => {
     const {push} = useRouter();
-    const {items, removeItem} = useCartStore()
+    const {items, removeItem} = useCartStore();
     const totalPrice = items.reduce((total, item) => total + item.price * item.qty, 0);
 
-console.log("Cart item", items);
+    console.log("Cart item", items);
 
     const handleCheckout = () => {
-        push("/checkout")
-    }
+        push("/checkout");
+    };
 
     return (
     <div className="absolute bg-white right-0 top-12 shadow-xl shadow-black/10 border border-gray-200 w-90 z-10">
         <div className="p-4 border-b border-gray-200 font-bold text-center">
             Shopping Cart
         </div>
-        {items.length ? items.map((item, index) => (
+        {items.length ? (items.map((item, index) => (
                 <div className="border-b border-gray-200 p-4 flex gap-3" key={index}>
                     <div className="bg-primary-light aspect-square w-16 flex justify-center items-center">
                         <Image
@@ -47,7 +47,8 @@ console.log("Cart item", items);
                         <FiTrash2/>
                     </Button>
                 </div>
-            )): (
+            ))
+            ) : (
                 <div className="text-center opacity-50 py-5">Your shopping cart is empty</div>
             )}
         <div className="border-t border-gray-200 p-4">

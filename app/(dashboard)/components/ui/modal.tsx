@@ -5,7 +5,7 @@ type TModalProps = {
     onClose: () => void;
     title: string;
     children: React.ReactNode;
-}
+};
 
 const Modal = ({isOpen, onClose, title, children}: TModalProps) => {
     if (!isOpen) return null;
@@ -26,7 +26,7 @@ const Modal = ({isOpen, onClose, title, children}: TModalProps) => {
                 <div className="p-7">{children}</div>
             </div>
         </div>
-    )
-}
+    );
+};
 
 export default Modal;

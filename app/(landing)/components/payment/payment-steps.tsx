@@ -1,6 +1,6 @@
 "use client";
 
-import { FiCheckCircle, } from "react-icons/fi";
+import { FiCheckCircle } from "react-icons/fi";
 import CardWithHeader from "../ui/card-with-header";
 import FileUpload from "../ui/file-upload";
 import priceFormatter from "@/app/utils/price-formatter";
@@ -15,14 +15,10 @@ const PaymentSteps = () => {
     const {items, customerInfo, reset} = useCartStore();
     const [file, setFile] = useState<File | null>();
 
-     const totalPrice = items.reduce(
+    const totalPrice = items.reduce(
     (total, item) => total + item.price * item.qty,
     0
   );
-
-    const uploadAndConfirm = () => {
-        push("/order-status/123123");
-    };
 
     const handleConfirmPayment = async () => {
         if (!file) {
@@ -41,7 +37,7 @@ const PaymentSteps = () => {
             formData.append("customerName", customerInfo.customerName);
             formData.append("customerContact", customerInfo.customerContact!.toString());
             formData.append("customerAddress", customerInfo.customerAddress);
-            formData.append("image", file)
+            formData.append("image", file);
             formData.append("purchasedItems",
                 JSON.stringify(items.map((item) => ({productId: item._id, qty: item.qty})))
             )
@@ -51,7 +47,7 @@ const PaymentSteps = () => {
 
             alert("Transaction created successfully!");
             reset();
-            push(`/order-status/${res._id}`)
+            push(`/order-status/${res._id}`);
         } catch(error) {
             console.log(error);
         }

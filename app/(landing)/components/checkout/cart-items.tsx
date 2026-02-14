@@ -11,10 +11,10 @@ import { getImageUrl } from "@/app/lib/api";
 
 type TCartItems = {
     handlePayment: () => void;
-}
+};
 
 const CartItems = ({handlePayment}: TCartItems) => {
-    const {items, removeItem} = useCartStore()
+    const {items, removeItem} = useCartStore();
     const {push} = useRouter();
 
     const totalPrice = items.reduce(
@@ -51,7 +51,7 @@ const CartItems = ({handlePayment}: TCartItems) => {
                             </div>
                         ))}
             </div>
-             <div className="border-t border-gray-200 p-4">
+            <div className="border-t border-gray-200 p-4">
             <div className="flex justify-between font-semibold">
                 <div className="text-sm">Total</div>
                 <div className="text-primary text-xs">
@@ -64,7 +64,7 @@ const CartItems = ({handlePayment}: TCartItems) => {
              className="w-full mt-4" 
              onClick={handlePayment}> 
             <FiCreditCard/>
-                  Proceed to Payment
+            Proceed to Payment
             </Button>
             </div>
             </div>

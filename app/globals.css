@@ -28,7 +28,7 @@ html {
   @apply mb-5;
 }
 
-.input-group {
+.input-group label {
   @apply block text-xs mb-1;
 }
 
@@ -41,12 +41,12 @@ html {
 
 /* INPUT GROUP */
 
-.input-group-admin {
+.input-group-admin label {
   @apply block text-xs mb-1;
 }
 
 .input-group-admin input,
 .input-group-admin select,
 .input-group-admin textarea {
-  @apply px-4 py-3 w-full border border-gray-400 rounded-md focus:border-gray-500 outline-none text-sm;
+  @apply px-4 py-3 w-full border border-[#DBDBDB] rounded-md focus:border-gray-500 outline-none text-sm;
 }

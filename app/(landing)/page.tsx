@@ -7,8 +7,8 @@ import { getAllProducts } from "../services/product.service";
 export default async function Home() {
   const [categories, products] = await Promise.all([
     getAllCategories(),
-    getAllProducts()
-  ])
+    getAllProducts(),
+  ]);
 
   return (
   <main>

@@ -9,13 +9,13 @@ import { useRouter } from "next/navigation";
 const Checkout = () => {
     const {push} = useRouter();
     const {customerInfo, setCustomerInfo} = useCartStore();
-     const [formData, setFormData] = useState<CustomerInfo>({
+    const [formData, setFormData] = useState<CustomerInfo>({
             customerName: "",
             customerContact: null,
             customerAddress: ""
         });
 
-         const handlePayment = () => {
+        const handlePayment = () => {
             if (
                 !formData.customerName ||
                 !formData.customerContact ||

@@ -1,6 +1,5 @@
 "use client";
 
-import Image from "next/image";
 import { FiAlertCircle } from "react-icons/fi";
 
 const OrderRejected = () => {
@@ -14,7 +13,7 @@ const OrderRejected = () => {
              I'm sorry, your order is rejected because your payment proof is not valid.
             </p>
         </div>
-    )
-}
+    );
+};
 
 export default OrderRejected;

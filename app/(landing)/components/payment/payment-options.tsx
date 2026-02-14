@@ -18,11 +18,13 @@ const paymentList = [
         account_number: 5238218923,
         account_holder: "PT SportsOn Digital",
     },
-]
+];
 
 const PaymentOptions = async () => {
-    const banks = await getAllBanks()
-    return <CardWithHeader title="Payment Options">
+    const banks = await getAllBanks();
+
+    return (
+    <CardWithHeader title="Payment Options">
         {banks.map((payment, index) => (
             <div className="flex gap-5 p-5 border-b border-gray-100" key={index}>
                 <div className="bg-blue-100 p-4 text-blue-500 h-fit self-center">
@@ -37,9 +39,9 @@ const PaymentOptions = async () => {
                     Bank Transfer
                 </div>
             </div>
-            ))
-    }
-        </CardWithHeader>;
+            ))}
+        </CardWithHeader>
+    );
 };
 
 export default PaymentOptions;

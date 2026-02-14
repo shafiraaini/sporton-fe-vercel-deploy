@@ -1,4 +1,4 @@
-import {create} from "zustand";
+import { create } from "zustand";
 import { Product } from "../types";
 import { persist } from "zustand/middleware";
 
@@ -31,13 +31,13 @@ export const useCartStore = create<CartStore>() (
             },
             addItem: (product, qty = 1) => {
                 const items = get().items;
-                const existingItem = items.find((item) => item._id === product._id)
+                const existingItem = items.find((item) => item._id === product._id);
 
                 if (existingItem) {
                     set({
                         items: items.map((item) =>
-                        item._id === product._id ? {...item, qty: item.qty + qty}: item)
-                    })
+                        item._id === product._id ? {...item, qty: item.qty + qty}: item),
+                    });
                 } else {
                     set({items: [...items, {...product, qty}]});
                 }
@@ -46,7 +46,7 @@ export const useCartStore = create<CartStore>() (
                 set({items: get().items.filter((item) => item._id !== productId)});
             },
             reset: () => {
-                set({items: [], customerInfo: null})
+                set({items: [], customerInfo: null});
             },
         }),
         {

@@ -1,7 +1,7 @@
 type TCardWithHeaderProps = {
-    title: string,
+    title: string;
     children: React.ReactNode;
-}
+};
 
 const CardWithHeader = ({title, children}:TCardWithHeaderProps) => {
     return (
@@ -11,6 +11,7 @@ const CardWithHeader = ({title, children}:TCardWithHeaderProps) => {
             </div>
             {children}
         </div>
-    )
-}
+    );
+};
+
 export default CardWithHeader;

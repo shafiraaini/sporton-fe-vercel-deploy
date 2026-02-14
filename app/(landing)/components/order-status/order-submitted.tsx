@@ -6,7 +6,7 @@ import { FiRefreshCw } from "react-icons/fi";
 
 const OrderSubmitted = () => {
     const reloadOrderStatus = () => {
-        window.location.reload()
+        window.location.reload();
     };
 
     return (
@@ -29,7 +29,7 @@ const OrderSubmitted = () => {
                 Refresh Order Status
             </Button>
         </div>
-    )
-}
+    );
+};
 
 export default OrderSubmitted;

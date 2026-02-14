@@ -1,12 +1,13 @@
 "use client";
 
+import { logout } from "@/app/services/auth.service";
 import Image from "next/image";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { FiBox, FiCreditCard, FiLayers, FiLogOut, FiShoppingCart } from "react-icons/fi";
 
 const Sidebar = () => {
-    const pathname = usePathname()
+    const pathname = usePathname();
 
     const menuItems = [
         {
@@ -29,9 +30,10 @@ const Sidebar = () => {
             icon: FiCreditCard,
             link: "/admin/bank-info"
         },
-    ]
+    ];
 
-    return <aside className="w-80 min-h-screen bg-white border-r border-gray-100 flex flex-col fixed left-0 top-0">
+    return (
+    <aside className="w-80 min-h-screen bg-white border-r border-gray-100 flex flex-col fixed left-0 top-0">
         <div className="py-8 px-14 border-b border-gray-200">
             <Image
              src="/images/logo-admin.svg"
@@ -48,7 +50,7 @@ const Sidebar = () => {
                     key={index}
                     className=
                     {`flex gap-3 items-center py-3 px-4.5 rounded-lg font-medium duration-300
-                        ${isActive ? 'bg-primary/15 text-primary': "hover:bg-gray-100"
+                        ${isActive ? "bg-primary/15 text-primary": "hover:bg-gray-100"
                     }`}
                 >
                     <item.icon size={24}/>
@@ -56,17 +58,17 @@ const Sidebar = () => {
                         {item.name}
                     </span>
                 </Link>
-            )
+            );
             })}
         </div>
         <Link
-            href="#"
-            className="flex gap-3 font-medium py-3 px-4.5 mx-5 hover:bg-gray-100 duration-300 rounded-lg mt-auto mb-10"
-        >
+        href="#"
+        className="flex gap-3 font-medium py-3 px-4.5 mx-5 hover:bg-gray-100 duration-300 rounded-lg mt-auto mb-10">
             <FiLogOut size={24}/>
             Log Out
         </Link>
-    </aside>;
+    </aside>
+    );
 };
 
 export default Sidebar;

@@ -8,7 +8,7 @@ import { useState } from "react";
 import { useCartStore } from "@/app/hooks/use-cart-store";
 
 const Header = () => {
-  const {items} = useCartStore() 
+  const {items} = useCartStore();
   const [isCartPopupOpen, setIsCartPopupOpen] = useState(false);
 
     return (

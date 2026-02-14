@@ -1,19 +1,19 @@
 "use client";
 
-import React, { useState } from "react";
+import { useState } from "react";
 import CardWithHeader from "../ui/card-with-header";
 import { CustomerInfo } from "@/app/hooks/use-cart-store";
 
 type TOrderInformation = {
     formData: CustomerInfo;
-    setFormData: React.Dispatch<React.SetStateAction<CustomerInfo>>
-}
+    setFormData: React.Dispatch<React.SetStateAction<CustomerInfo>>;
+};
 
 const OrderInformation = ({formData, setFormData}: TOrderInformation) => {
 
     const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
-        setFormData({...formData, [e.target.name]: e.target.value})
-    }
+        setFormData({...formData, [e.target.name]: e.target.value});
+    };
 
     return (
      <CardWithHeader title="Order Information">
@@ -31,7 +31,7 @@ const OrderInformation = ({formData, setFormData}: TOrderInformation) => {
                 <div className="input-group">
                     <label htmlFor="customerContact">Whatsapp Number</label>
                     <input
-                     type="text" 
+                     type="number" 
                      placeholder="Type your whatsapp number" 
                      id="customerContact"
                      name="customerContact"

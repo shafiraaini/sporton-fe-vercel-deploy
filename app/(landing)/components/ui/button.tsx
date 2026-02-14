@@ -5,7 +5,7 @@ type TButtonProps = {
     size?: "normal" | "small";
 } & React.ButtonHTMLAttributes<HTMLButtonElement>;
 
-const Button =({
+const Button = ({
   children, 
   className, 
   variant = "primary", 

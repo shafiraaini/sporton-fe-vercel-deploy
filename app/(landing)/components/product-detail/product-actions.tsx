@@ -11,21 +11,22 @@ import { useRouter } from "next/navigation";
 import { useCartStore } from "@/app/hooks/use-cart-store";
 import { Product } from "@/app/types";
 
-type TProductActionsProps ={
+type TProductActionsProps = {
     product: Product;
     stock: number;
 };
 
 const ProductActions = ({product, stock}: TProductActionsProps) => {
-    const {addItem} = useCartStore()
+    const {addItem} = useCartStore();
     const {push} = useRouter();
     const [qty, setQty] = useState(1);
 
     const handleAddToCart = () => {
-        addItem(product, qty)
-    }
+        addItem(product, qty);
+    };
 
     const handleCheckout = () => {
+        addItem(product);
         push("/checkout");
     };
 
@@ -53,7 +54,7 @@ const ProductActions = ({product, stock}: TProductActionsProps) => {
             <Button
              variant="dark" 
              className="px-20 w-full"
-             onClick={() => push("/checkout")}>
+             onClick={handleCheckout}>
                 Checkout Now
                 <FiArrowRight size={24}/>
             </Button>

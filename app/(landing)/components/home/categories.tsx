@@ -4,20 +4,15 @@ import Image from "next/image";
 import Link from "next/link";
 import { FiArrowRight } from "react-icons/fi";
 
-const categoryList = [
-    {
-        name: "Running",
-        imgUrl: "category-running.svg",
-    },
-
-];
  type TCategoriesProps = {
     categories: Category[];
  };
 
 const CategoriesSection = ({categories}: TCategoriesProps) => {
+    console.log(categories);
+
     return (
-    <section id="category-section" className="container mx-auto pb-20">
+        <section id="category-section" className="container mx-auto pb-20">
                 <div className="flex justify-between">
                     <h2 className="font-bold text-2xl">Browse By Categories</h2>
                     <Link href="#" className="flex gap-2 text-primary font-medium">
@@ -35,7 +30,7 @@ const CategoriesSection = ({categories}: TCategoriesProps) => {
                              width={86}
                              height="86" 
                              alt={category.name}
-                             className="mb-[10px]"
+                             className="mb-2.5"
                             />
                                 <div className="text-primary font-medium text-xl text-center">
                                     {category.name}
